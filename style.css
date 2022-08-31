@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,700&display=swap');
+*{
+ box-sizing:  border-box;
+}
+body{
+ font-weight: 700;
+ font-size: 18px;
+ font-size:'Red Hat Text', sans-serif;
+ background: url(6561350.jpg) no-repeat hsl(249, 18%, 12%);
+  background-size: cover;
+ height: 100vh;
+ /* width: 100vw; */
+ /* margin: 0; */
+ /* object-fit:cover; */
+  display: flex;
+ flex-flow: column nowrap;
+ justify-content: center;
+}
+/* .heading{
+ margin-bottom: 100px
+} */
+main{
+ height: 100vh;
+ /* margin-left: 300px; */
+ /* background: url(rocket\ launch.png) no-repeat 0 bottom; */
+ /* background-size: contain; */
+ display: flex;
+ flex-flow: column nowrap;
+ justify-content: center;
+ align-items: center;
+ /* align-content: center; */
+ padding: 10px 100px;
+ /* padding-top: 2vh; */
+}
+h1{
+ margin-bottom: 50px;
+ color: hsl(230, 20%, 25%);
+ font-size: 60px;
+ text-transform:uppercase;
+ /* margin-right: 130px; */
+}
+.day{
+ position: relative;
+ margin-top: 120px;
+ right: 130px;
+ font-size: 30px;
+ text-transform: uppercase;
+ color: hsl(230, 20%, 25%);
+}
+.countdown{
+ display: flex;
+ flex-flow: row wrap;
+
+}
+.time-element{
+ position: relative;
+ margin-right: 20px;
+ color:white;
+ height:100px ;
+ width:110px;
+ background-color:hsl(235, 20%, 25%);
+ font-size: 5em;
+ border-radius: 8px;
+ text-align: center;
+ overflow: hidden;
+}
+.time-element::before,.time-element::after{
+ content: '';
+ position: absolute;
+ z-index: 6;
+ top: calc(50% - 5px);
+ background: white;
+ height: 10px;
+ width: 10px;
+ border-radius: 54% ;
+}
+.time-element::after{
+ left: -5px;
+}
+.time-element::before{
+ right: -5px;
+}
+.time-element > span{
+ position: absolute;
+ left: 0;
+ right: 0;
+}
+.top{
+ z-index: 3;
+ background-color:hsl(240, 21%, 21%);/**/
+ transform-origin:50% 100%;
+ transform: perspective(200px);
+}
+.bottom{
+ z-index: 1;
+}
+.bottom::before{
+ content: '';
+ position: absolute;
+ display: block;
+ top: 0;
+ left: 0;
+ height: 40%;
+ width: 100%;
+ background-color:hsl(210, 50%, 1%) ;/**/
+}
+.bottom-back{
+ z-index: 2;
+ top: 0;
+ height:50%;
+ overflow: hidden;
+ background-color: hsl(230, 20%, 25%);
+}
+.bottom-back span{
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ margin: auto; 
+}
+.top, .top-back{
+ height: 50%;
+ overflow: hidden;
+ backface-visibility: hidden;
+}
+.top-back{
+ z-index: 4;
+ bottom: 0;
+ transform-origin:50% 0;
+  background-color: hsl(230, 20%, 25%);
+ transform: perspective(200px) rotateX(180deg);
+}
+.time-element .top::after .time-element .bottom::after{
+ content: '';
+ position: absolute;
+ z-index: -1;
+ left: 0;
+ bottom: 0;
+ width:100%;
+ height: 100%;
+ border-bottom: 1px solid black;
+
+}
+
+
+.top-back span{
+ position: absolute;
+ top: -100%;
+ left: 0;
+ right: 0;
+ margin: auto;
+}
+
+.newsletter form{
+ width: 600px;
+ max-width: 600px;
+ position: relative;
+ margin-top: 100px;
+ /* margin-right: 130px; */
+}
+.newsletter form input:first-child{
+ display: inline-block;
+ width: 100%;
+ padding: 14px 130px 14px 15px;
+ border: 2px solid hsl(230, 20%, 25%);
+ outline:none;
+ border-radius:30px;
+}
+.newsletter form input:last-child{
+ position: absolute;
+ display: inline-block;
+ outline: none;
+ border: none;
+ padding: 10px 30px;
+ border-radius:30px ;
+ background-color: hsl(230, 20%, 25%);
+ color: whitesmoke;
+ box-shadow: 0px 0px 5px #000, 0px 0px 15px #2719ecd8;
+ top: 6px;
+ right: 6px;
+}
+
+
+
+
+@media only screen and (max-width: 600px){
+h1{
+ font-size: 40px;
+}
+main{
+ padding: 0;
+}
+.newsletter form{
+ width: 450px;
+}
+}
+@media only screen and (max-width: 400px){
+ main{
+  padding: 0;
+  height: auto;
+  margin-top: -250px;
+ }
+ .minutes, .seconds{
+  margin-top: 20px;
+ }
+ h1{
+  font-size: 30px;
+ }
+ .newsletter form{
+  margin-top: 30px;
+  width: 300px;
+ }
+ .countdown{
+  justify-content: center;
+ }
+}
